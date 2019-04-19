@@ -1,19 +1,8 @@
 package com.ham;
 
 public class ThreadExample {
-    private static int sum = 0;
     private static int threadCount = 1;
     private static final Object MUTEX = new Object();
-
-    static int getSum() {
-        return sum;
-    }
-
-    static void setSum(int sum) {
-        if(sum > 0) {
-            ThreadExample.sum = sum;
-        }
-    }
 
     static int getThreadCount() {
         return threadCount;
@@ -45,7 +34,7 @@ public class ThreadExample {
         }
 
         long end = System.currentTimeMillis();
-        System.out.println(sum);
+        System.out.println(WorkerThread.getSum());
         System.out.println("실행 시간 : " + (end - start) / 1000.0);
     }
 }
